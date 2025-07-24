@@ -2,102 +2,146 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="font-sans bg-[#F7F3EF] min-h-screen flex flex-col">
+      {/* NAVBAR */}
+      <header className="w-full bg-[#F7F3EF] py-5 px-8 flex items-center justify-between border-b">
+        <div className="text-2xl font-bold flex items-center gap-2">
+          {/* Logo icon can be a SVG or image */}
+          <span className="inline-block w-8 h-8 bg-black rounded-full mr-2"></span>
+          SORA TRADING
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+        <nav className="flex gap-8 text-lg">
+          <a href="#products" className="hover:text-orange-600">Products</a>
+          <a href="#about" className="hover:text-orange-600">About Us</a>
+          <a href="#contact" className="hover:text-orange-600">Contact</a>
+        </nav>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#contact"
+          className="ml-6 px-6 py-2 bg-orange-400 hover:bg-orange-500 text-white rounded font-semibold shadow"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          Get a Quote
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
+      </header>
+
+      {/* HERO SECTION */}
+      <section
+        className="relative w-full flex flex-col items-center justify-center text-center py-16 px-4"
+        style={{
+          background: "url('/charcoal-hero.jpg') center/cover",
+        }}
+      >
+        {/* Add a dark overlay */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="relative z-10 max-w-2xl mx-auto">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+            Premium Indonesian<br />
+            Charcoal &amp; Biomass
+          </h1>
+          <p className="text-lg text-white mb-8">
+            Sustainably sourced. Globally shipped.
+          </p>
+          <div className="flex justify-center gap-4">
+            <a href="#products" className="bg-orange-400 hover:bg-orange-500 px-6 py-3 text-white rounded-lg font-semibold shadow">
+              Explore Products
+            </a>
+            <a href="#contact" className="bg-white hover:bg-gray-100 px-6 py-3 text-gray-900 rounded-lg font-semibold shadow">
+              Contact Sales
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUCTS */}
+      <section id="products" className="max-w-6xl mx-auto w-full py-12 px-4">
+        <h2 className="text-3xl font-bold mb-8 text-center">Our Products</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          {/* Repeat these for each product */}
+          <div className="bg-white p-5 rounded-lg shadow text-center">
+            <Image src="/halaban.jpg" alt="Halaban Charcoal" width={80} height={60} className="mx-auto mb-2" />
+            <h3 className="font-semibold">Halaban Charcoal</h3>
+            <p className="text-sm text-gray-600">High quality natural hardwood charcoal.</p>
+          </div>
+          <div className="bg-white p-5 rounded-lg shadow text-center">
+            <Image src="/briquette.jpg" alt="Briquette Charcoal" width={80} height={60} className="mx-auto mb-2" />
+            <h3 className="font-semibold">Briquette Charcoal</h3>
+            <p className="text-sm text-gray-600">Consistent shape, long burning.</p>
+          </div>
+          <div className="bg-white p-5 rounded-lg shadow text-center">
+            <Image src="/ironwood.jpg" alt="Ironwood Charcoal" width={80} height={60} className="mx-auto mb-2" />
+            <h3 className="font-semibold">Ironwood Charcoal</h3>
+            <p className="text-sm text-gray-600">Ironwood for specialty use.</p>
+          </div>
+          <div className="bg-white p-5 rounded-lg shadow text-center">
+            <Image src="/sawdust.jpg" alt="Sawdust Charcoal" width={80} height={60} className="mx-auto mb-2" />
+            <h3 className="font-semibold">Sawdust Charcoal</h3>
+            <p className="text-sm text-gray-600">For BBQ, shisha, and industrial fuel.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US & ABOUT US */}
+      <section className="max-w-6xl mx-auto w-full py-12 px-4 grid grid-cols-1 md:grid-cols-2 gap-10">
+        {/* Why Choose Us */}
+        <div>
+          <h2 className="text-2xl font-bold mb-4">Why Choose Us</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+            <div>
+              <div className="font-bold">Sustainable Sourcing</div>
+            </div>
+            <div>
+              <div className="font-bold">Premium Quality Control</div>
+            </div>
+            <div>
+              <div className="font-bold">Worldwide Logistics</div>
+            </div>
+          </div>
+          <blockquote className="text-gray-700 italic border-l-4 border-orange-400 pl-4">
+            “The best charcoal supplier we’ve worked with! Exceptional quality and reliable delivery every time.”
+          </blockquote>
+        </div>
+        {/* About Us */}
+        <div id="about">
+          <h2 className="text-2xl font-bold mb-4">About Us</h2>
+          <p className="text-gray-700">
+            At Sora Trading, we take pride in sourcing premium Indonesian charcoal &amp; biomass. We guarantee consistent quality and smooth international delivery, backed by sustainable practices and professional service.
+          </p>
+        </div>
+      </section>
+
+      {/* CALL TO ACTION */}
+      <section className="bg-gray-900 text-white py-8 px-4 flex flex-col items-center">
+        <h2 className="text-2xl font-bold mb-4">Ready to Order?</h2>
+        <a href="mailto:sales@yourcompany.com" className="bg-orange-400 hover:bg-orange-500 px-8 py-3 rounded-lg font-semibold text-lg">
+          Request Sample
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-gray-800 text-gray-100 py-8 px-4">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col items-center sm:items-start gap-2">
+            <div className="text-lg font-bold">Quick Links</div>
+            <a href="#products" className="hover:text-orange-400">Products</a>
+            <a href="#about" className="hover:text-orange-400">About Us</a>
+            <a href="#contact" className="hover:text-orange-400">Contact</a>
+          </div>
+          <div className="flex flex-col items-center sm:items-start gap-2">
+            <div className="text-lg font-bold">Contact info</div>
+            <div>+62 800 1400 1240</div>
+            <div>info@soratrading.com</div>
+            <div className="flex gap-3 mt-2">
+              {/* Social icons, use SVG or HeroIcons or lucide-react for real ones */}
+              <span>🌐</span>
+              <span>🐦</span>
+              <span>💼</span>
+            </div>
+          </div>
+        </div>
+        <div className="mt-6 text-center text-gray-400 text-sm">
+          &copy; {new Date().getFullYear()} Sora Trading. All rights reserved.
+        </div>
       </footer>
     </div>
   );
 }
+
