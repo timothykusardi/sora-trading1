@@ -1,4 +1,8 @@
-import Image from "next/image";
+import Link  from 'next/link'
+import Image from 'next/image'
+import { PRODUCTS, Product } from './data/products'
+
+
 
 export default function Home() {
   return (
@@ -8,7 +12,7 @@ export default function Home() {
         <div className="text-2xl font-bold flex items-center gap-2">
           {/* Logo icon can be a SVG or image */}
           <span className="inline-block w-8 h-8 bg-black rounded-full mr-2"></span>
-          SORA TRADING
+          Alpha Charcoal International
         </div>
         <nav className="flex gap-8 text-lg">
           <a href="#products" className="hover:text-orange-600">Products</a>
@@ -51,33 +55,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PRODUCTS */}
-      <section id="products" className="max-w-6xl mx-auto w-full py-12 px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">Our Products</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-          {/* Repeat these for each product */}
-          <div className="bg-white p-5 rounded-lg shadow text-center">
-            <Image src="/halaban.jpg" alt="Halaban Charcoal" width={80} height={60} className="mx-auto mb-2" />
-            <h3 className="font-semibold">Halaban Charcoal</h3>
-            <p className="text-sm text-gray-600">High quality natural hardwood charcoal.</p>
-          </div>
-          <div className="bg-white p-5 rounded-lg shadow text-center">
-            <Image src="/briquette.jpg" alt="Briquette Charcoal" width={80} height={60} className="mx-auto mb-2" />
-            <h3 className="font-semibold">Briquette Charcoal</h3>
-            <p className="text-sm text-gray-600">Consistent shape, long burning.</p>
-          </div>
-          <div className="bg-white p-5 rounded-lg shadow text-center">
-            <Image src="/ironwood.jpg" alt="Ironwood Charcoal" width={80} height={60} className="mx-auto mb-2" />
-            <h3 className="font-semibold">Ironwood Charcoal</h3>
-            <p className="text-sm text-gray-600">Ironwood for specialty use.</p>
-          </div>
-          <div className="bg-white p-5 rounded-lg shadow text-center">
-            <Image src="/sawdust.jpg" alt="Sawdust Charcoal" width={80} height={60} className="mx-auto mb-2" />
-            <h3 className="font-semibold">Sawdust Charcoal</h3>
-            <p className="text-sm text-gray-600">For BBQ, shisha, and industrial fuel.</p>
-          </div>
+{/* PRODUCTS */}
+<section
+  id="products"
+  className="mt-0.000001 max-w-6xl mx-auto w-full pt-20 pb-12 px-4"
+>
+  {/* ←– make sure this heading is here, *before* the grid */}
+  <h2 className="text-3xl font-bold mb-8 text-center">
+    Our Products
+  </h2>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {(Object.entries(PRODUCTS) as [string, Product][])
+      .map(([slug, prod]) => (
+      <Link
+        key={slug}
+        href={`/products/${slug}`}
+        className="flex flex-col rounded-2xl overflow-hidden shadow-lg group"
+      >
+        {/* …image container… */}
+        <div className="relative aspect-[4/3]">
+          <Image
+            src={prod.img}
+            alt={prod.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform"
+          />
         </div>
-      </section>
+
+        {/* …colored panel… */}
+        <div
+          className={`
+            ${prod.bg}
+            flex-1
+            p-6
+            flex flex-col justify-between
+            relative
+          `}
+        >
+          <div>
+            <h3 className="text-xl font-bold">{prod.title}</h3>
+            <p className="mt-2 text-sm">{prod.description}</p>
+          </div>
+
+          <span className="
+            absolute bottom-4 right-4
+            w-8 h-8 rounded-full
+            bg-white text-gray-900
+            flex items-center justify-center
+            text-2xl font-bold
+          ">
+            +
+          </span>
+        </div>
+      </Link>
+    ))}
+  </div>
+</section>
+
+
+
 
       {/* WHY CHOOSE US & ABOUT US */}
       <section className="max-w-6xl mx-auto w-full py-12 px-4 grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -103,7 +140,7 @@ export default function Home() {
         <div id="about">
           <h2 className="text-2xl font-bold mb-4">About Us</h2>
           <p className="text-gray-700">
-            At Sora Trading, we take pride in sourcing premium Indonesian charcoal &amp; biomass. We guarantee consistent quality and smooth international delivery, backed by sustainable practices and professional service.
+            At Alpha Charcoal International, we take pride in sourcing premium Indonesian charcoal &amp; biomass. We guarantee consistent quality and smooth international delivery, backed by sustainable practices and professional service.
           </p>
         </div>
       </section>
@@ -138,7 +175,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-6 text-center text-gray-400 text-sm">
-          &copy; {new Date().getFullYear()} Sora Trading. All rights reserved.
+          &copy; {new Date().getFullYear()} Alpha Charcoal International. All rights reserved.
         </div>
       </footer>
     </div>

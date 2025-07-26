@@ -1,0 +1,38 @@
+export interface Product {
+  title:       string
+  img:         string
+  description: string
+  specs:       string[]
+  bg:          string   // <-- new
+}
+
+export const PRODUCTS: Record<string,Product> = {
+  'halaban-charcoal': {
+    title:       'Halaban Charcoal',
+    img:         '/halaban.jpg',
+    description: 'High quality natural hardwood charcoal.',
+    specs:       ['Size: 40–60 mm', 'Moisture ≤ 5%', 'Fixed Carbon ≥ 80%'],
+    bg:          'bg-gray-900 text-white',
+  },
+  'briquette-charcoal': {
+    title:       'Briquette Charcoal',
+    img:         '/briquette.jpg',
+    description: 'Consistent shape, long burning.',
+    specs:       ['Density: 1.1 g/cm³', 'Ash ≤ 3%', 'Burn time: 2–3 h'],
+    bg:          'bg-[rgb(75,46,29)] text-white',  // custom brown
+  },
+  'ironwood-charcoal': {
+    title:       'Ironwood Charcoal',
+    img:         '/ironwood.jpg',
+    description: 'Ironwood for specialty use.',
+    specs:       ['Hardness: High', 'Burn temp: 900–1200 °C'],
+    bg:          'bg-gray-800 text-white',
+  },
+  'sawdust-charcoal': {
+    title:       'Sawdust Charcoal',
+    img:         '/sawdust.jpg',
+    description: 'For BBQ, shisha, and industrial fuel.',
+    specs:       ['Particle size: ≤ 2 mm', 'Ash ≤ 8%'],
+    bg:          'bg-[rgb(164,105,48)] text-white',  // lighter brown
+  },
+}
