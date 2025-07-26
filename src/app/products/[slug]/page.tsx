@@ -1,15 +1,15 @@
+// src/app/products/[slug]/page.tsx
 import Image from 'next/image';
-import { PRODUCTS, Product } from '../../data/products';
+import { PRODUCTS } from '../../data/products';
 
-interface Props {
-  params: { slug: string };
-}
-
-export default async function ProductPage({ params }: Props) {
-  // 1) await the thenable
+export default async function ProductPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  // await the thenable here
   const { slug } = await params;
 
-  // 2) look up your product
   const product = PRODUCTS[slug];
   if (!product) {
     return <p className="p-8">Sorry, product not found.</p>;
