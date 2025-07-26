@@ -7,25 +7,6 @@ import { PRODUCTS, Product } from './data/products'
 export default function Home() {
   return (
     <div className="font-sans bg-[#F7F3EF] min-h-screen flex flex-col">
-      {/* NAVBAR */}
-      <header className="hidden md:flex w-full bg-[#F7F3EF] py-5 px-8 items-center justify-between border-b">
-        <div className="text-2xl font-bold flex items-center gap-2">
-          {/* Logo icon can be a SVG or image */}
-          <span className="inline-block w-8 h-8 bg-black rounded-full mr-2"></span>
-          Alpha Charcoal International
-        </div>
-        <nav className="flex gap-8 text-lg">
-          <a href="#products" className="hover:text-orange-600">Products</a>
-          <a href="#about" className="hover:text-orange-600">About Us</a>
-          <a href="#contact" className="hover:text-orange-600">Contact</a>
-        </nav>
-        <a
-          href="#contact"
-          className="ml-6 px-6 py-2 bg-orange-400 hover:bg-orange-500 text-white rounded font-semibold shadow"
-        >
-          Get a Quote
-        </a>
-      </header>
 
       {/* HERO SECTION */}
       <section
