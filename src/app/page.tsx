@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="font-sans bg-[#F7F3EF] min-h-screen flex flex-col">
       {/* NAVBAR */}
-      <header className="w-full bg-[#F7F3EF] py-5 px-8 flex items-center justify-between border-b">
+      <header className="hidden md:flex w-full bg-[#F7F3EF] py-5 px-8 items-center justify-between border-b">
         <div className="text-2xl font-bold flex items-center gap-2">
           {/* Logo icon can be a SVG or image */}
           <span className="inline-block w-8 h-8 bg-black rounded-full mr-2"></span>
