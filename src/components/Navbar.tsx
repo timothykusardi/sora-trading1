@@ -2,45 +2,46 @@
 'use client';
 
 import { useState } from 'react';
-import Link         from 'next/link';
-import Image        from 'next/image';
+import Link          from 'next/link';
+import Image         from 'next/image';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const headerHeight = 64; // px
 
   return (
-    <header className="bg-[#F7F3EF] shadow fixed inset-x-0 top-0 z-20">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <header className="fixed inset-x-0 top-0 h-[64px] bg-white shadow z-50">
+      <div className="max-w-7xl mx-auto h-full px-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-full overflow-hidden">
             <Image
               src="/alpha-logo.png"
-              alt="Alpha Charcoal International"
+              alt="Logo"
               width={40}
               height={40}
               className="object-cover"
             />
           </div>
-          <span className="text-2xl font-bold">
+          <span className="text-xl font-bold">
             Alpha Charcoal International
           </span>
         </Link>
 
-        {/* Desktop nav (md+) */}
+        {/* Desktop nav (hidden < md) */}
         <nav className="hidden md:flex space-x-6 items-center">
           <Link href="/products" className="hover:underline">Products</Link>
           <Link href="/about"    className="hover:underline">About Us</Link>
           <Link href="/contact"  className="hover:underline">Contact</Link>
           <Link
             href="/quote"
-            className="ml-4 bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600"
+            className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600"
           >
             Get a Quote
           </Link>
         </nav>
 
-        {/* Mobile hamburger (<md) */}
+        {/* Mobile hamburger (shown < md) */}
         <button
           onClick={() => setMenuOpen(o => !o)}
           className="md:hidden p-2"
@@ -55,12 +56,12 @@ export default function Navbar() {
         <div
           className={`
             md:hidden
-            fixed inset-0
-            bg-[#F7F3EF]
-            pt-[64px]        /* push below header */
+            fixed inset-x-0
+            top-[${headerHeight}px] bottom-0
+            bg-white
             overflow-y-auto
-            z-30
-            p-4 space-y-2
+            z-40
+            p-4 space-y-4
           `}
         >
           <Link
