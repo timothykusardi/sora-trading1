@@ -34,7 +34,7 @@ export default function Home() {
       </section>
 
       {/* PRODUCTS */}
-      <section id="products" className="pt-20 pb-12 bg-[#FAF5F0]">
+      <section id="products" className="pt-8 pb-12 bg-[#FAF5F0]">
         <h2 className="text-3xl font-bold text-black mb-8 text-center">
           Our Products
         </h2>

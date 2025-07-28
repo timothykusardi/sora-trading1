@@ -25,7 +25,7 @@ export default function Navbar() {
               className="object-cover"
             />
           </div>
-          <span className="text-xl font-bold">
+          <span className="text-xl font-bold text-black">
             Alpha Charcoal International
           </span>
         </Link>
