@@ -48,17 +48,18 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-black mb-4">
             Why Choose Us
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-            <div>
-              <div className="font-bold">Sustainable Sourcing</div>
-            </div>
-            <div>
-              <div className="font-bold">Premium Quality Control</div>
-            </div>
-            <div>
-              <div className="font-bold">Worldwide Logistics</div>
-            </div>
-          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4 text-black">
+  <div>
+    <div className="font-bold">Sustainable Sourcing</div>
+  </div>
+  <div>
+    <div className="font-bold">Premium Quality Control</div>
+  </div>
+  <div>
+    <div className="font-bold">Worldwide Logistics</div>
+  </div>
+</div>
+
           <blockquote className="text-gray-700 italic border-l-4 border-orange-400 pl-4">
             “The best charcoal supplier we’ve worked with! Exceptional quality and reliable delivery every time.”
           </blockquote>
