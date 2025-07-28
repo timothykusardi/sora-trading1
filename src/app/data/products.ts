@@ -4,6 +4,7 @@ export interface Product {
   description: string
   specs:       string[]
   bg:          string   // <-- new
+  layout?:     'immersed';
 }
 
 export const PRODUCTS: Record<string,Product> = {
@@ -13,13 +14,15 @@ export const PRODUCTS: Record<string,Product> = {
     description: 'High quality natural hardwood charcoal.',
     specs:       ['Size: 40–60 mm', 'Moisture ≤ 5%', 'Fixed Carbon ≥ 80%'],
     bg:          'bg-gray-900 text-white',
+    layout:     'immersed'
   },
   'briquette-charcoal': {
     title:       'Briquette Charcoal',
     img:         '/briquette.jpg',
     description: 'Consistent shape, long burning.',
     specs:       ['Density: 1.1 g/cm³', 'Ash ≤ 3%', 'Burn time: 2–3 h'],
-    bg:          'bg-[rgb(75,46,29)] text-white',  // custom brown
+    bg:          'bg-[rgb(75,46,29)] text-white',
+    layout:     'immersed'  // custom brown
   },
   'ironwood-charcoal': {
     title:       'Ironwood Charcoal',
@@ -27,6 +30,7 @@ export const PRODUCTS: Record<string,Product> = {
     description: 'Ironwood for specialty use.',
     specs:       ['Hardness: High', 'Burn temp: 900–1200 °C'],
     bg:          'bg-gray-800 text-white',
+    layout:     'immersed'
   },
   'sawdust-charcoal': {
     title:       'Sawdust Charcoal',
@@ -34,5 +38,6 @@ export const PRODUCTS: Record<string,Product> = {
     description: 'For BBQ, shisha, and industrial fuel.',
     specs:       ['Particle size: ≤ 2 mm', 'Ash ≤ 8%'],
     bg:          'bg-[rgb(164,105,48)] text-white',  // lighter brown
+    layout:     'immersed'
   },
 }

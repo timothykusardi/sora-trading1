@@ -4,9 +4,11 @@
 import { useState } from 'react';
 import Link          from 'next/link';
 import Image         from 'next/image';
+import ContactPanel  from './ContactPanel';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
   const headerHeight = 64; // px
 
   return (
@@ -30,15 +32,15 @@ export default function Navbar() {
 
         {/* Desktop nav (hidden < md) */}
         <nav className="hidden md:flex space-x-6 items-center">
-          <Link href="/products" className="hover:underline">Products</Link>
+          
           <Link href="/about"    className="hover:underline">About Us</Link>
-          <Link href="/contact"  className="hover:underline">Contact</Link>
-          <Link
-            href="/quote"
-            className="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600"
+          <button
+            onClick={() => setContactOpen(true)}
+            className="hover:underline"
           >
-            Get a Quote
-          </Link>
+            Contact
+          </button>
+          
         </nav>
 
         {/* Mobile hamburger (shown < md) */}
@@ -64,13 +66,7 @@ export default function Navbar() {
             p-4 space-y-4
           `}
         >
-          <Link
-            href="/products"
-            onClick={() => setMenuOpen(false)}
-            className="block py-2 hover:underline"
-          >
-            Products
-          </Link>
+          
           <Link
             href="/about"
             onClick={() => setMenuOpen(false)}
@@ -78,22 +74,18 @@ export default function Navbar() {
           >
             About Us
           </Link>
-          <Link
-            href="/contact"
-            onClick={() => setMenuOpen(false)}
-            className="block py-2 hover:underline"
+          <button
+            onClick={() => { setContactOpen(true); setMenuOpen(false) }}
+            className="block w-full text-left py-2 hover:underline"
           >
             Contact
-          </Link>
-          <Link
-            href="/quote"
-            onClick={() => setMenuOpen(false)}
-            className="block bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600"
-          >
-            Get a Quote
-          </Link>
+          </button>
+          
         </div>
       )}
+
+      {/* Slide-out Contact panel */}
+      <ContactPanel open={contactOpen} setOpen={setContactOpen} />
     </header>
   );
 }
