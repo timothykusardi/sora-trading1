@@ -55,7 +55,7 @@ export default function ContactPanel({ open, setOpen }: ContactPanelProps) {
         <div className="mb-6">
           <p className="font-medium mb-2">Chat on WhatsApp</p>
           <a
-            href="https://wa.me/6281381357385759"
+            href="https://wa.me/6281357385759"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full inline-block bg-green-500 hover:bg-green-600 text-white py-3 rounded text-center"
