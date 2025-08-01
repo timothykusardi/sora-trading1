@@ -46,7 +46,7 @@ export default function Navbar() {
         {/* Mobile hamburger (shown < md) */}
         <button
           onClick={() => setMenuOpen(o => !o)}
-          className="md:hidden p-2"
+          className="md:hidden p-2 text-black"
           aria-label="Toggle menu"
         >
           {menuOpen ? '✕' : '☰'}
