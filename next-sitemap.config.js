@@ -1,9 +1,30 @@
-/** next-sitemap.config.js */
+// next-sitemap.config.js
+const path = require('path');
+
+// load your JSON by path
+const PRODUCTS = require(path.resolve(
+  __dirname,
+  'src/app/data/products.json'
+));
+
+const siteUrl = 'https://charcoalinternational.com';
+
 module.exports = {
-  siteUrl: 'https://charcoalinternational.com', // ← your production URL
-  generateRobotsTxt: true,                     // (optional) also creates robots.txt
-  changefreq: 'weekly',                        // how often pages are “likely” to change
-  priority: 0.7,                               // sitemap priority (0.0–1.0)
-  sitemapSize: 5000,                           // split into multiple if you have >5000 URLs
-  exclude: ['/404', '/components/*'],          // any paths you don’t want indexed
-}
+  siteUrl,
+  generateRobotsTxt: true,
+  changefreq: 'weekly',
+  priority: 0.7,
+  sitemapSize: 5000,
+  exclude: ['/404', '/components/*'],
+
+  additionalPaths: async (config) => {
+    // sanity check:
+    console.log('PRODUCT SLUGS:', Object.keys(PRODUCTS));
+    return Object.keys(PRODUCTS).map((slug) => ({
+      loc: `${config.siteUrl}/products/${slug}`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'weekly',
+      priority: 0.5,
+    }));
+  },
+};
