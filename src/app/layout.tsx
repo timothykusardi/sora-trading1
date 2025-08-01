@@ -56,6 +56,11 @@ export const metadata: Metadata = {
     "فحم كتلة",
     "منتجات الكتلة الحيوية",
   ],
+  icons: {
+    icon: "/alpha-logo.png",      // standard favicon (browsers will auto‐resize)
+    shortcut: "/alpha-logo.png",  // modern browsers’ shortcut icon
+    apple: "/alpha-logo.png",     // for iOS home‐screen touch icon
+  },
 };
 
 export default function RootLayout({
