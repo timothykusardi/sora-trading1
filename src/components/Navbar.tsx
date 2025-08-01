@@ -70,13 +70,13 @@ export default function Navbar() {
           <Link
             href="/about"
             onClick={() => setMenuOpen(false)}
-            className="block py-2 hover:underline"
+            className="block py-2 hover:underline text-black"
           >
             About Us
           </Link>
           <button
             onClick={() => { setContactOpen(true); setMenuOpen(false) }}
-            className="block w-full text-left py-2 hover:underline"
+            className="block w-full text-left py-2 hover:underline text-black"
           >
             Contact
           </button>

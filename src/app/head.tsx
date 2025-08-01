@@ -14,8 +14,10 @@ export default function Head() {
         content="arang kokas premium, ekspor arang Indonesia, arang kalimantan berkualitas, premium Indonesian charcoal, Kalimantan charcoal exporter, sustainable biomass supplier, فحم إندونيسي فاخر, تصدير فحم كاليمانتان"
       />
 
-      {/* Favicon / tab icon */}
-      <link rel="icon" href="/alpha-logo.png" />
+      {/* Fallback to the .ico file */}
+      <link rel="icon" href="/favicon.ico" />
+      {/* Optional PNGs as backups */}
+      <link rel="icon" href="/alpha-logo.png" sizes="any" />
       <link rel="shortcut icon" href="/alpha-logo.png" />
       <link rel="apple-touch-icon" href="/alpha-logo.png" />
     </>

@@ -49,11 +49,11 @@ export default function ContactPanel({ open, setOpen }: ContactPanelProps) {
           </svg>
         </button>
 
-        <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
+        <h2 className="text-2xl font-bold mb-6 text-black">Contact Us</h2>
 
         {/* WhatsApp */}
         <div className="mb-6">
-          <p className="font-medium mb-2">Chat on WhatsApp</p>
+          <p className="font-medium mb-2 text-black">Chat on WhatsApp</p>
           <a
             href="https://wa.me/6281357385759"
             target="_blank"
@@ -66,7 +66,7 @@ export default function ContactPanel({ open, setOpen }: ContactPanelProps) {
 
         {/* Email */}
         <div>
-          <p className="font-medium mb-2">Send us an Email</p>
+          <p className="font-medium mb-2 text-black">Send us an Email</p>
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=acoalintl@gmail.com"
             target="_blank"
