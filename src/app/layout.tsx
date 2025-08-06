@@ -69,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[#F7F3EF]">
       <body className="antialiased bg-[#F7F3EF]">
         <Navbar />
         <main className="pt-[64px]">{children}</main>
