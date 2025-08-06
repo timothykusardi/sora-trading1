@@ -1,19 +1,21 @@
 // src/app/layout.tsx
-import type { Metadata } from "next"; 
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 
-import Navbar from '../components/Navbar';
+import Head from 'next/head'
+import type { Metadata } from "next"
+import { Geist, Geist_Mono } from "next/font/google"
+import "./globals.css"
+
+import Navbar from '../components/Navbar'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-});
+})
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
+})
 
 export const metadata: Metadata = {
   title: "Alpha Charcoal International | Premium Indonesian Charcoal & Biomass",
@@ -61,20 +63,29 @@ export const metadata: Metadata = {
     shortcut: "/alpha-logo.png",
     apple: "/alpha-logo.png",
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en" className="bg-[#F7F3EF]">
+      <Head>
+        {/* Lock viewport, cover safe areas */}
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,viewport-fit=cover"
+        />
+      </Head>
+
       <body
         className="antialiased bg-[#F7F3EF]"
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       >
         <Navbar />
+
         <main
           className="pt-[64px]"
           style={{ minHeight: "100dvh" }}
@@ -83,5 +94,5 @@ export default function RootLayout({
         </main>
       </body>
     </html>
-  );
+  )
 }
