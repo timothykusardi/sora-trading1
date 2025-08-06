@@ -57,9 +57,9 @@ export const metadata: Metadata = {
     "منتجات الكتلة الحيوية",
   ],
   icons: {
-    icon: "/alpha-logo.png",      // standard favicon (browsers will auto‐resize)
-    shortcut: "/alpha-logo.png",  // modern browsers’ shortcut icon
-    apple: "/alpha-logo.png",     // for iOS home‐screen touch icon
+    icon: "/alpha-logo.png",
+    shortcut: "/alpha-logo.png",
+    apple: "/alpha-logo.png",
   },
 };
 
@@ -70,9 +70,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-[#F7F3EF]">
-      <body className="antialiased bg-[#F7F3EF]">
+      <body
+        className="antialiased bg-[#F7F3EF]"
+        style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+      >
         <Navbar />
-        <main className="pt-[64px]">{children}</main>
+        <main
+          className="pt-[64px]"
+          style={{ minHeight: "100dvh" }}
+        >
+          {children}
+        </main>
       </body>
     </html>
   );
