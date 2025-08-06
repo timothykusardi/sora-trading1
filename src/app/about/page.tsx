@@ -23,7 +23,7 @@ export default function AboutPage() {
       {/* MISSION & VALUES */}
       <section className="max-w-4xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
         {/* Mission */}
-        <div className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow">
+        <div className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow text-black">
           <FlagIcon className="w-12 h-12 text-orange-600 mb-4" />
           <h2 className="text-2xl font-semibold mb-2 text-black">Mission</h2>
           <p>
@@ -33,7 +33,7 @@ export default function AboutPage() {
         </div>
 
         {/* Values */}
-        <div className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow">
+        <div className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow text-black">
           <CheckCircleIcon className="w-12 h-12 text-orange-600 mb-4" />
           <h2 className="text-2xl font-semibold mb-2 text-black">Values</h2>
           <p>
