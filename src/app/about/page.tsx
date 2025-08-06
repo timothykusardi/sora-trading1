@@ -25,7 +25,7 @@ export default function AboutPage() {
         {/* Mission */}
         <div className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow">
           <FlagIcon className="w-12 h-12 text-orange-600 mb-4" />
-          <h2 className="text-2xl font-semibold mb-2">Mission</h2>
+          <h2 className="text-2xl font-semibold mb-2 text-black">Mission</h2>
           <p>
             Our mission is to produce high-quality charcoal while promoting
             sustainable practices and supporting local communities.
@@ -35,7 +35,7 @@ export default function AboutPage() {
         {/* Values */}
         <div className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow">
           <CheckCircleIcon className="w-12 h-12 text-orange-600 mb-4" />
-          <h2 className="text-2xl font-semibold mb-2">Values</h2>
+          <h2 className="text-2xl font-semibold mb-2 text-black">Values</h2>
           <p>
             We are committed to integrity, environmental responsibility, and
             excellence in all aspects of our business.
@@ -45,8 +45,8 @@ export default function AboutPage() {
 
       {/* OVERVIEW */}
       <section className="max-w-3xl mx-auto mt-16 px-4 text-center">
-        <h2 className="text-3xl font-bold mb-4">Overview</h2>
-        <p className="text-lg leading-relaxed">
+        <h2 className="text-3xl font-bold mb-4 text-black">Overview</h2>
+        <p className="text-lg leading-relaxed text-black">
           Our charcoal is sustainably sourced from the most fertile regions of
           Kalimantan, working hand-in-hand with local farmers. By fostering
           strong relationships with these communities, we ensure that our
@@ -57,8 +57,8 @@ export default function AboutPage() {
 
       {/* TEAM */}
       <section className="max-w-5xl mx-auto mt-20 px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Meet Our Team</h2>
-        <div className="grid grid-cols-4 gap-8">
+        <h2 className="text-3xl font-bold text-center mb-8 text-black">Meet Our Team</h2>
+        <div className="grid grid-cols-4 gap-8 text-black">
           {[
             { name: 'Yintopo Kotjik Kotan', img: '/avatar-male.png' },
             { name: 'Hayleen Evangelina Mastoyo', img: '/avatar-female.png' },
